@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Planet {
-    private int orbitTime;
-    private String destination;
+    int orbitTime;
+    String destination;
     private ArrayList<Moon> moons;
     public Planet(int orbitTime, String destination){
         this.orbitTime = orbitTime;
@@ -26,7 +26,7 @@ public class Planet {
         orbitTime = 0;
     }
     public void addMoon(){
-        moons.add();
+        moons.add(new Moon(null, 0, true, null));
     }
     public List<Moon> getMoons(){
         List<Moon> moonList = List.of();
