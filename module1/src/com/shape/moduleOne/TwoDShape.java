@@ -1,8 +1,8 @@
 package com.shape.moduleOne;
 
 public class TwoDShape {
-    double width;
-    double height;
+    public double width;
+    public double height;
     public TwoDShape(double width, double height){
         this.width = width;
         this.height = height;

@@ -25,4 +25,8 @@ public class Triangle extends TwoDShape {
     public double getArea(){
         return height*side2/2;
     }
+    @Override
+    public String toString(){
+        return "Triangle: side 1 = " + side1 + ", side 2 = " + side2 + ", side 3 = " + side3;
+    }
 }

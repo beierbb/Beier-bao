@@ -1,8 +1,8 @@
 package com.shape.moduleTwo;
 
-public class TwoDShape {
-    double width;
-    double height;
+public abstract class TwoDShape {
+    public double width;
+    public double height;
     public TwoDShape(double width, double height){
         this.width = width;
         this.height = height;
@@ -10,11 +10,18 @@ public class TwoDShape {
     public TwoDShape(){
 
     }
-    public double getArea(){
-        return width*height;
-    }
 
     public void setHeight(double height) {
         this.height = height;
     }
+    public void setWidth(double width) {
+        this.width = width;
+    }
+    public double getHeight(double height){
+        return height;
+    }
+    public double getWidth(double width){
+        return width;
+    }
+    abstract double getArea();
 }
