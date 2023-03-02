@@ -1,6 +1,6 @@
-package com.shape.moduleTwo;
+package com.shape.moduleThree;
 
-public class Triangle extends TwoDShape {
+public class Triangle extends TwoDShape implements Rotate{
     double side1;
     double side2;
     double side3;
@@ -27,5 +27,20 @@ public class Triangle extends TwoDShape {
     @Override
     public String toString(){
         return "Triangle: side 1 = " + side1 + ", side 2 = " + side2 + ", side 3 = " + side3 + ", area = " + getArea();
+    }
+    double rotateAngle = angle;
+    @Override
+    public void rotate90() {
+        rotateAngle += 90;
+    }
+
+    @Override
+    public void rotate180() {
+        rotateAngle += 180;
+    }
+
+    @Override
+    public void rotate(double degree) {
+        rotateAngle += degree;
     }
 }
