@@ -1,6 +1,7 @@
 package com.shape.moduleTwo;
 
 public class Triangle extends TwoDShape {
+    //    A subclass of TwoShape and define it with color and sides
     double side1;
     double side2;
     double side3;
@@ -13,6 +14,7 @@ public class Triangle extends TwoDShape {
         this.side2 = side2;
         this.side3 = side3;
     }
+    //    Using the Herons formula to get the height here since we only know the sides.
     private double heronsHeight(){
         double s = (side1 + side2 + side3)/2;
         double area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
@@ -24,6 +26,7 @@ public class Triangle extends TwoDShape {
         heronsHeight();
         return height*side2/2;
     }
+    //    toString method including the getArea methods - will be tested in Main class
     @Override
     public String toString(){
         return "Triangle: side 1 = " + side1 + ", side 2 = " + side2 + ", side 3 = " + side3 + ", area = " + getArea();

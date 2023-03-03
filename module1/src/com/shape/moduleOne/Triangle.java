@@ -3,6 +3,7 @@ package com.shape.moduleOne;
 import com.shape.moduleOne.TwoDShape;
 
 public class Triangle extends TwoDShape {
+    //    A subclass of TwoShape and define it with color and sides
     double side1;
     double side2;
     double side3;
@@ -15,6 +16,7 @@ public class Triangle extends TwoDShape {
         this.side2 = side2;
         this.side3 = side3;
     }
+    //    Using the Herons formula to get the height here since we only know the sides.
     private double heronsHeight(){
         double s = (side1 + side2 + side3)/2;
         double area = Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+//      Creat two variables to test the toString and getArea methods
         Circle cir = new Circle(3);
         Triangle tri = new Triangle(3, 4, 5);
         ArrayList<TwoDShape> check = new ArrayList<>();

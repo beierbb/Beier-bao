@@ -1,11 +1,14 @@
 package com.shape.moduleFour;
 
 public abstract class TwoDShape {
+//    the super class of all
     public double width;
     public double height;
-    public TwoDShape(double width, double height){
+    Color color;
+    public TwoDShape(double width, double height, Color color){
         this.width = width;
         this.height = height;
+        this.color = color;
     }
     public TwoDShape(){
 

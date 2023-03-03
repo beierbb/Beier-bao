@@ -1,6 +1,7 @@
 package com.shape.moduleTwo;
 
 public abstract class TwoDShape {
+    //    the super class of all, and was made abstract
     public double width;
     public double height;
     public TwoDShape(double width, double height){
@@ -10,7 +11,7 @@ public abstract class TwoDShape {
     public TwoDShape(){
 
     }
-
+//    Setters and getters for the height and weight
     public void setHeight(double height) {
         this.height = height;
     }
@@ -23,5 +24,6 @@ public abstract class TwoDShape {
     public double getWidth(double width){
         return width;
     }
+//    was made abstract
     abstract double getArea();
 }
