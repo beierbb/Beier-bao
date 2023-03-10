@@ -1,15 +1,25 @@
 package two;
+import java.util.Objects;
 
-public class Card {
+public abstract class Card {
 
-    private Suits suit;
-    private int rank;
+    Suits suit;
 
-    public Card(Suits suit, int rank) {
+    public Card(Suits suit) {
         this.suit = suit;
-        this.rank = rank;
+    }
+    public Card(){
+
+    }
+    public boolean equals(Object obj) {
+        if (obj instanceof Card suitName){
+            if (Objects.equals(this.suit, suitName.suit)){
+                return true;
+            }
+        }
+        return false;
     }
     public String toString(){
-        return "Card: suit = " + suit + ", rank = " + rank;
+        return "Card: suit = " + suit;
     }
 }
