@@ -1,18 +1,24 @@
 package three;
-import two.Suits;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public abstract class Card {
+public abstract class Card implements Comparable<Card> {
 
-    Suits suit;
-
-    public Card(Suits suit) {
+    three.Suits suit;
+    int suitValue;
+    int value;
+    //    Added value to make it easier to rank/compare
+    public Card(three.Suits suit, int suitValue, int value) {
         this.suit = suit;
+        this.suitValue = suitValue;
+        this.value = value;
     }
     public Card(){
 
     }
+
+
     public boolean equals(Object obj) {
         if (obj instanceof Card suitName){
             if (Objects.equals(this.suit, suitName.suit)){
@@ -21,7 +27,8 @@ public abstract class Card {
         }
         return false;
     }
+
     public String toString(){
-        return "Card: suit = " + suit;
+        return "Card: suit = " + suit + "value = " + value;
     }
 }

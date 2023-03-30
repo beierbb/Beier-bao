@@ -6,7 +6,7 @@ public class ListInterface {
     public static void main(String[] args) {
         List<String> ranks = List.of(new String[]{"Jack", "Queen", "King"});
 //        Create a new list and add the values in
-        List<Card> cardList = new ArrayList<>();
+        LinkedList<Card> cardList = new LinkedList<>();
         for (int i = 1; i <= 10; i++) {
             cardList.add(new Number(Suits.CLUBS, i));
             cardList.add(new Number(Suits.DIAMONDS, i));
@@ -19,7 +19,6 @@ public class ListInterface {
             cardList.add(new Face(Suits.HEARTS, ranks.get(i)));
             cardList.add(new Face(Suits.SPADES, ranks.get(i)));
         }
-        LinkedList<Card> cardLinkedList = new LinkedList<>(cardList);
 //        Can print out the whole list if uncomment the lines below
 
 //        Iterator<Card> iterator = cardLinkedList.iterator();
@@ -31,7 +30,7 @@ public class ListInterface {
 //        polling 7 cards
         List<Card> polling = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            Card c = cardLinkedList.pollFirst();
+            Card c = cardList.pollFirst();
             polling.add(c);
             System.out.println(c);
         }
