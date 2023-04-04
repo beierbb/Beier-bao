@@ -15,20 +15,13 @@ public class Main {
             String text = scanner.nextLine().toLowerCase().replaceAll("\\p{P}", "");
             lines.add(text);
         }
-//        split the lines into words
-        ArrayList<String> words = new ArrayList<>();
-        for (int i = 0 ; i<13393 ; i++){
-            String line = lines.get(i);
-            String[] setting = line.split(" ");
-            words.add(Arrays.toString(setting));
-        }
-//        add the words into hashset
+//        split the lines into words and add words into hashset
         HashSet<String> wordSet = new HashSet<>();
-        for (int i = 0 ; i<13393 ; i++){
-            wordSet.add(words.get(i));
+        for (String l : lines) {
+            String words = Arrays.toString(l.split(" "));
+            wordSet.add(words);
         }
-//        count the unique words
+//        count unique words
         System.out.println("Unique words: " + wordSet.size());
-
     }
 }
