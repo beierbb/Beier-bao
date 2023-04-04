@@ -8,7 +8,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<String> lines = new ArrayList<>();
-
+        HashSet<String> wordSet = new HashSet<>();
 //        import the text file and change it to only lower case words
         Scanner scanner = new Scanner(new File("C:\\Users\\2655708\\Downloads\\illiad.txt"));
         while (scanner.hasNext()) {
@@ -16,7 +16,6 @@ public class Main {
             lines.add(text);
         }
 //        split the lines into words and add words into hashset
-        HashSet<String> wordSet = new HashSet<>();
         for (String l : lines) {
             String words = Arrays.toString(l.split(" "));
             wordSet.add(words);
