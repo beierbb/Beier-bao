@@ -1,12 +1,16 @@
 package five;
 
 public class Encrypt {
-    int input;
+    Character input;
     int output;
-    public Encrypt(int input){
+    public Encrypt(Character input){
         this.input = input;
     }
     public void EncryptMethod(){
-        input = input + 2;
+        input = (char) (input + 2);
+        System.out.println(input);
+    }
+    public String toString(){
+        return "the input " + input;
     }
 }
