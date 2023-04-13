@@ -9,10 +9,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the String: ");
-        String inputValue = scanner.nextLine().toLowerCase().replaceAll("\\p{P}", "");
+        String inputValue = scanner.nextLine();
         System.out.println("Number of Shifts: ");
         CaesarCipher num = new CaesarCipher(Integer.parseInt(scanner.nextLine()));
-        System.out.println(num.Encrpted(inputValue));
-        System.out.println(num.Decrpted(inputValue));
+        System.out.println(num.encryptWord(inputValue));
+        System.out.println(num.decryptWord(num.encryptWord(inputValue)));
     }
 }

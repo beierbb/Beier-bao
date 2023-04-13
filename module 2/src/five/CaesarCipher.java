@@ -10,26 +10,50 @@ public class CaesarCipher {
     String list = "abcdefghijklmnopqrstuvwxyz";
     public CaesarCipher(int shift){
         this.shift = shift;
+//        initiate the hashmap with the letters
+        this.encrypted = new HashMap<>();
+        this.decrypted = new HashMap<>();
         for (int i = 0; i<26; i++) {
-            this.alphabet = Character.valueOf(Character.valueOf(list.charAt(i)));
-            this.encrypted = new HashMap<>();
-            this.decrypted = new HashMap<>();
+            this.alphabet = list.charAt(i);
             encrypted.put(alphabet, (char) (alphabet + shift));
             decrypted.put((char) (alphabet + shift), alphabet);
         }
     }
-    public String Encrpted(String str){
-        for (int i = 0; i<str.length(); i++) {
-            Character value = Character.valueOf(Character.valueOf(str.charAt(i)));
-            encrypted.get(value);
+
+    /**
+     * Takes in a word and shifts each letter by the shift amount when the object was instantiated.
+     * Example: "hello" with a shift of 1 returns: "ifmmp"
+     *
+     * @param word a single word without punctuation.
+     * @return encrypted word, if the parameter was incorrectly entered returns null.
+     */
+    public String encryptWord(String word) {
+        if (word.contains(" ")) {
+            return null;
         }
-        return;
+        String encryptedWord = "";
+        for (int i = 0; i < word.length(); i++) {
+            Character value = word.charAt(i);
+            encryptedWord += encrypted.get(value);
+        }
+        return encryptedWord;
     }
-    public String Decrpted(String str){
-        for (int i = 0; i<str.length(); i++) {
-            Character value1 = Character.valueOf(Character.valueOf(str.charAt(i)));
-            decrypted.get(value1);
+    /**
+     * Takes in an encrypted word and shifts each letter back to the original word
+     * by the shift amount when the object was instantiated.
+     *
+     * @param word a single word without punctuation.
+     * @return encrypted word, if the parameter was incorrectly entered returns null.
+     */
+    public String decryptWord(String word) {
+        if (word.contains(" ")) {
+            return null;
         }
-        return;
+        String decryptedWord = "";
+        for (int i = 0; i < word.length(); i++) {
+            Character value = word.charAt(i);
+            decryptedWord += decrypted.get(value);
+        }
+        return decryptedWord;
     }
 }
