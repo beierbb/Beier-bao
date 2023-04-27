@@ -18,10 +18,12 @@ public class Main {
         if (q.isEmpty()) {
             return;
         }
-        ArrayList<Integer> qu = (ArrayList<Integer>) q.get(0).getNodes();
-        Node node = new Node(q.hashCode(), qu);
-        q.add(node);
-        System.out.print(node + " ");
+        for (int i = 0; i<q.size(); i++){
+            ArrayList<Integer> qu = (ArrayList<Integer>) q.get(i).getNodes();
+            Node node = new Node(q.get(i).getKey(), qu);
+            q.add(node);
+            System.out.print(node + " ");
+        }
 //        check all the nodes and label the non-visited ones visited so won't check again
         for (Node number: q) {
             while (!number.isVisited()) {
