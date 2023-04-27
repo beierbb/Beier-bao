@@ -10,21 +10,23 @@ public class Main {
     public static ArrayList<Node> graph;
     public static void main(String[] args) throws FileNotFoundException {
         setupTree();
-        BFS();
+        BFS(graph);
     }
 
-    private static void BFS(LinkedList<Integer> q) {
+    private static void BFS(ArrayList<Node> q) {
         //Your code here.  Feel free to modify signature or add helper functions.
         if (q.isEmpty()) {
             return;
         }
-        Node node = new Node(q.poll(), );
-        nodes.add(node);
+        ArrayList<Integer> qu = (ArrayList<Integer>) q.get(0).getNodes();
+        Node node = new Node(q.hashCode(), qu);
+        q.add(node);
         System.out.print(node + " ");
-        for (Node number: nodes) {
-            while (number.isVisited() == false) {
+//        check all the nodes and label the non-visited ones visited so won't check again
+        for (Node number: q) {
+            while (!number.isVisited()) {
                 number.isVisited();
-                q.add(number.getKey());
+                q.add(number);
             }
         }
         BFS(q);
