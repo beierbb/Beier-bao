@@ -730,7 +730,7 @@ public class Gridder extends javax.swing.JFrame
         for(int c=0; c<gridCount; c++){
             grid[c][c]=1;
         }
-        for(int c=gridCount; c>0; c--){
+        for(int c=gridCount-1; c>0; c--){
             grid[c][c]=1;
         }
         System.out.println("5");
@@ -810,7 +810,7 @@ public class Gridder extends javax.swing.JFrame
         }
 
         for (int c=0; c<gridCount; c++){
-            temp[c][0] = temp[c][gridCount];
+            temp[c][0] = temp[c][gridCount-1];
             for (int r = 1; r<gridCount; r++){
                 temp[c][r] = temp[c][r-1];
                 draw();
@@ -830,9 +830,9 @@ public class Gridder extends javax.swing.JFrame
             }
         }
 
-        for (int row = 0; row < gridSize; row++) {
-            for (int col = 0; col < gridSize; col++) {
-                temp[col][gridSize - 1 - row] = temp[row][col]; // Rotate 90 degrees to the right
+        for (int row = 0; row < gridCount; row++) {
+            for (int col = 0; col < gridCount; col++) {
+                temp[col][gridCount - 1 - row] = temp[row][col]; // Rotate 90 degrees to the right
             }
         }
         grid = temp;
